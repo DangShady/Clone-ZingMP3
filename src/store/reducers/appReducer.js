@@ -7,7 +7,9 @@ const initState = {
     top100: {},
     loveFile: {},
     mood: {},
-    newRelease: {}
+    newRelease: {},
+    weekChart: [],
+    remix: {}
 
 }
 
@@ -23,6 +25,8 @@ const appReducer = (state = initState, action) => {
                 loveFile: action.homeData?.find(item => item.sectionId === 'hEditorTheme2') || {},
                 mood: action.homeData?.find(item => item.sectionId === 'hEditorTheme4') || {},
                 newRelease: action.homeData?.find(item => item.sectionType === 'new-release') || {},
+                remix: action.homeData?.find(item => item.sectionId === 'hEditorTheme3') || {},
+                weekChart: action.homeData?.find(item => item.sectionType === 'weekChart')?.items || [],
             }
 
         default:
