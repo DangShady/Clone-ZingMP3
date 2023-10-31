@@ -7,6 +7,7 @@ import { BsThreeDots, BsFillPlayFill, BsPauseFill, BsMusicNoteBeamed, BsDot, BsM
 import { CiRepeat, CiShuffle } from 'react-icons/ci'
 import { LuRepeat1 } from 'react-icons/lu'
 import { LiaVolumeOffSolid, LiaVolumeUpSolid, LiaVolumeDownSolid } from 'react-icons/lia'
+import { ImBin } from 'react-icons/im'
 
 const icons = {
     MdOutlineLibraryMusic,
@@ -34,6 +35,7 @@ const icons = {
     LiaVolumeOffSolid,
     LiaVolumeUpSolid,
     LiaVolumeDownSolid,
+    ImBin
 }
 
 export default icons

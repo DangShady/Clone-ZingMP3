@@ -34,6 +34,7 @@ const Player = ({ setIsShowRightSidebar }) => {
             setIsLoadedSoure(true)
             if (res1.data.err === 0) {
                 setSongInfo(res1.data.data)
+                dispatch(actions.setCurSongData(res1.data.data))
             }
             if (res2.data.err === 0) {
                 audio.pause()
@@ -143,7 +144,7 @@ const Player = ({ setIsShowRightSidebar }) => {
 
 
     return (
-        <div className='bg-main-400 px-5 h-full flex'>
+        <div className='bg-main-400 z-40 px-5 h-full flex'>
             <div className='w-[30%] flex-auto flex gap-3 items-center'>
                 <img src={songInfo?.thumbnail} alt="thumbnail" className='w-16 h-16 object-cover rounded-md' />
                 <div className='flex flex-col'>
@@ -186,7 +187,7 @@ const Player = ({ setIsShowRightSidebar }) => {
                     <span>{moment.utc(songInfo?.duration * 1000).format('mm:ss')}</span>
                 </div>
             </div>
-            <div className='w-[30%] flex-aut flex items-center justify-end gap-4'>
+            <div className='w-[30%] hidden flex-aut min-[840px]:flex items-center justify-end gap-4'>
                 <div className='flex gap-2 items-center'>
                     <span onClick={() => setVolume(prev => +prev === 0 ? 70 : 0)}>
                         {+volume >= 50 ? <LiaVolumeUpSolid size={25} /> : +volume === 0 ? <LiaVolumeOffSolid size={25} /> : <LiaVolumeDownSolid size={25} />}

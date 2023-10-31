@@ -12,12 +12,13 @@ const { BsFillPlayFill } = icons
 const Album = () => {
 
     const { pid } = useParams()
-    const { curSongId, isPlaying, songs } = useSelector(state => state.music)
+    const { isPlaying } = useSelector(state => state.music)
     const [playlistData, setPlaylistData] = useState({})
     const dispatch = useDispatch()
     // const [first, setfirst] = useState(second)
 
     useEffect(() => {
+        dispatch(actions.setCurAlbumId(pid))
         const fetchDetailPlaylist = async () => {
             const response = await apis.apiGetDetaiPlaylist(pid)
             if (response?.data.err === 0) {
@@ -31,7 +32,7 @@ const Album = () => {
 
     return (
         <div className='flex gap-8 w-full h-full px-[59px]'>
-            <div className='flex-none w-1/4 border border-red-500 flex flex-col items-center gap-2'>
+            <div className='flex-none w-1/4 border  flex flex-col items-center gap-2'>
                 <div className='w-full relative overflow-hidden'>
                     <img src={playlistData?.thumbnailM} alt="thumbnail"
                         className={`w-full object-contain ${isPlaying ? 'rounded-full animate-rotate-center' : 'rounded-md'} shadow-md `} />

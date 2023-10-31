@@ -9,7 +9,8 @@ const initState = {
     mood: {},
     newRelease: {},
     weekChart: [],
-    remix: {}
+    remix: {},
+    albumHot: {},
 
 }
 
@@ -27,6 +28,7 @@ const appReducer = (state = initState, action) => {
                 newRelease: action.homeData?.find(item => item.sectionType === 'new-release') || {},
                 remix: action.homeData?.find(item => item.sectionId === 'hEditorTheme3') || {},
                 weekChart: action.homeData?.find(item => item.sectionType === 'weekChart')?.items || [],
+                albumHot: action.homeData?.find(item => item.sectionId === 'hAlbum') || {},
             }
 
         default:

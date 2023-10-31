@@ -1,4 +1,4 @@
-import { Home, Login, Public, Personal, Album, WeekRank,Search , SearchSongs, SearchAll } from './containers/public/'
+import { Home, Login, Public, Personal, Album, WeekRank, Search, SearchSongs, SearchAll, Register } from './containers/public/'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom'
@@ -22,13 +22,15 @@ function App() {
           <Route path={path.PUBLIC} element={<Public />} >
             <Route path={path.HOME} element={<Home />} />
             <Route path={path.LOGIN} element={<Login />} />
+            <Route path={path.REGISTER} element={<Register />} />
             <Route path={path.MY_MUSIC} element={<Personal />} />
             <Route path={path.ALBUM__TITLE__PID} element={<Album />} />
             <Route path={path.PLAYLIST__TITLE__PID} element={<Album />} />
-            <Route path={path.WEEKRANK__TITLE__PID} element={<WeekRank />} /> 
-            <Route path={path.ALL} element={<SearchAll />} /> 
-            <Route path={path.SEARCH} element={<Search />} /> 
-            <Route path={path.SONG} element={<SearchSongs />} /> 
+            <Route path={path.WEEKRANK__TITLE__PID} element={<WeekRank />} />
+            <Route path={path.SEARCH} element={<Search />} >
+              <Route path={path.ALL} element={<SearchAll />} />
+              <Route path={path.SONG} element={<SearchSongs />} />
+            </Route>
 
             <Route path={path.STAR} element={<Home />} />
           </Route>

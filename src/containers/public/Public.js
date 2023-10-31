@@ -8,10 +8,10 @@ const Public = () => {
     return (
         <div className='w-full relative h-screen flex flex-col bg-[#CED9D9]'>
             <div className='w-full h-full flex flex-auto'>
-                <div className='w-[240px] h-full flex-none border border-blue-500'>
+                <div className='min-[1024px]:w-[240px] w-[70px] h-full flex-none'>
                     <SidebarLeft />
                 </div>
-                <div className='flex-auto border flex flex-col border-red-500'>
+                <div className='flex-auto  flex flex-col '>
                     <div className='h-[70px] flex-none px-[59px] flex items-center'>
                         <Header />
                     </div>
@@ -21,7 +21,7 @@ const Public = () => {
                         </Scrollbars>
                     </div>
                 </div>
-                {isShowRightSidebar && <div className='w-[299px] hidden 1600:flex flex-none border border-green-500 animate-slide-left'>
+                {isShowRightSidebar && <div className='w-[299px] min-[1400px]:flex hidden  h-screen flex-none  animate-slide-left'>
                     <SidebarRight />
                 </div>}
             </div>
