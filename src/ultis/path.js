@@ -3,6 +3,7 @@ const path = {
     HOME: '/',
     LOGIN: 'login',
     REGISTER: 'register',
+    USER: 'user',
     STAR: '*',
     MY_MUSIC: 'mymusic',
     ALBUM__TITLE__PID: 'album/:title/:pid',
